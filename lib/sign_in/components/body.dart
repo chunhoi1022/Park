@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:park/components/default_button.dart';
+import 'package:park/constants.dart';
 
 import '../../size_config.dart';
 
@@ -24,23 +26,33 @@ class Body extends StatelessWidget {
               ),
             ),
             TextFormField(
-              decoration: const InputDecoration(labelText: 'Password'),
+              decoration: const InputDecoration(
+                  labelText: 'Password',
+                  focusColor: primaryColor,
+                  focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: primaryColor))),
             ),
             const Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
                     onPressed: null,
                     child: Text('Forgot Password',
-                        style: TextStyle(color: Color(0xff613EEA))))),
-            TextButton(
-              onPressed: null,
-              style: TextButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20)),
-                  primary: Colors.white,
-                  backgroundColor: Color(0xff613EEA)),
-              child: Text('Login', style: TextStyle(color: Colors.white)),
-            )
+                        style: TextStyle(color: primaryColor)))),
+            const Padding(
+              padding: EdgeInsets.only(top: 25.00, bottom: 20.00),
+              child: DefaultButton(text: 'Login'),
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              const Text('or'),
+              TextButton(
+                  onPressed: null,
+                  child: Text(
+                    'Signup',
+                    style: TextStyle(
+                        color: primaryColor,
+                        fontSize: getProportionateScreenWidth(16)),
+                  ))
+            ])
           ],
         ),
       ),
