@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: purple, fontFamily: "OpenSans"),
-      home: const SignInPage(),
+      home: const SignInScreen(),
     );
   }
 }

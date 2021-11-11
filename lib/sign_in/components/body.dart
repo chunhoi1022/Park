@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:park/components/default_button.dart';
 import 'package:park/constants.dart';
+import 'package:park/forgot_password/forgot_password_screen.dart';
 
 import '../../size_config.dart';
 
@@ -32,12 +33,16 @@ class Body extends StatelessWidget {
                   focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: primaryColor))),
             ),
-            const Align(
+            Align(
                 alignment: Alignment.centerRight,
-                child: TextButton(
-                    onPressed: null,
-                    child: Text('Forgot Password',
-                        style: TextStyle(color: primaryColor)))),
+                child: GestureDetector(
+                  onTap: () => Navigator.popAndPushNamed(
+                      context, ForgotPasswordScreen.routeName),
+                  child: const TextButton(
+                      onPressed: null,
+                      child: Text('Forgot Password',
+                          style: TextStyle(color: primaryColor))),
+                )),
             const Padding(
               padding: EdgeInsets.only(top: 25.00, bottom: 20.00),
               child: DefaultButton(text: 'Login'),
