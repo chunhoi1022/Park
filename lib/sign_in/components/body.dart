@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:park/components/default_button.dart';
 import 'package:park/constants.dart';
 import 'package:park/forgot_password/forgot_password_screen.dart';
-
+import 'package:park/sign_up/sign_up_page.dart';
 import '../../size_config.dart';
 
 class Body extends StatelessWidget {
@@ -36,7 +36,7 @@ class Body extends StatelessWidget {
             Align(
                 alignment: Alignment.centerRight,
                 child: GestureDetector(
-                  onTap: () => Navigator.popAndPushNamed(
+                  onTap: () => Navigator.pushNamed(
                       context, ForgotPasswordScreen.routeName),
                   child: const TextButton(
                       onPressed: null,
@@ -49,14 +49,17 @@ class Body extends StatelessWidget {
             ),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               const Text('or'),
-              TextButton(
-                  onPressed: null,
-                  child: Text(
-                    'Signup',
-                    style: TextStyle(
-                        color: primaryColor,
-                        fontSize: getProportionateScreenWidth(16)),
-                  ))
+              GestureDetector(
+                onTap: () => Navigator.pushNamed(context, SignUpScreen.routeName),
+                child: TextButton(
+                    onPressed: null,
+                    child: Text(
+                      'Signup',
+                      style: TextStyle(
+                          color: primaryColor,
+                          fontSize: getProportionateScreenWidth(16)),
+                    )),
+              )
             ])
           ],
         ),

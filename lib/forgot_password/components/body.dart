@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:park/components/default_button.dart';
+import 'package:park/components/no_account_text.dart';
 import 'package:park/size_config.dart';
-import '../../../../constants.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -102,7 +102,7 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
             },
           ),
           SizedBox(height: SizeConfig.screenHeight * 0.1),
-          // NoAccountText(),
+          NoAccountText(),
         ],
       ),
     );
