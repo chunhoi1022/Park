@@ -3,6 +3,7 @@ import 'package:park/components/custom_surfix_icon.dart';
 import 'package:park/components/default_button.dart';
 import 'package:park/components/no_account_text.dart';
 import 'package:park/size_config.dart';
+import 'package:park/verify_code/verify_code_screen.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -99,6 +100,7 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
             press: () {
               if (_formKey.currentState!.validate()) {
                 // Do what you want to do
+                // Navigator.pushNamed(context, VerifyCodeScreen.routeName);
               }
             },
           ),

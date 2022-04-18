@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:park/size_config.dart';
 
 const primaryColor = Color(0xff613EEA);
 const kPrimaryLightColor = Color(0xFFFFECDF);
@@ -7,6 +8,27 @@ const textColor = Colors.white;
 
 const kAnimationDuration = Duration(milliseconds: 200);
 
+final headingStyle = TextStyle(
+    fontSize: getProportionateScreenWidth(28),
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+    height: 1.5,
+);
+
+final otpInputDecoration = InputDecoration(
+    contentPadding:
+    EdgeInsets.symmetric(vertical: getProportionateScreenWidth(15)),
+    border: outlineInputBorder(),
+    focusedBorder: outlineInputBorder(),
+    enabledBorder: outlineInputBorder(),
+);
+
+OutlineInputBorder outlineInputBorder() {
+    return OutlineInputBorder(
+        borderRadius: BorderRadius.circular(getProportionateScreenWidth(15)),
+        borderSide: const BorderSide(color: Colors.black),
+    );
+}
 //form errer
 final RegExp emailValidatorRegExp =
     RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");

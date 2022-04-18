@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:park/components/custom_surfix_icon.dart';
 import 'package:park/components/default_button.dart';
+import 'package:park/components/social_card.dart';
 import 'package:park/constants.dart';
 import 'package:park/forgot_password/forgot_password_screen.dart';
 import 'package:park/sign_up/sign_up_page.dart';
@@ -65,7 +67,22 @@ class Body extends StatelessWidget {
                           fontSize: getProportionateScreenWidth(16)),
                     )),
               )
-            ])
+            ]),
+            SizedBox(height: SizeConfig.screenHeight * 0.08),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SocialCard(
+                  icon: "assets/icons/google-icon.svg",
+                  press: () {},
+                ),
+                SocialCard(
+                  icon: "assets/icons/facebook-2.svg",
+                  press: () {},
+                ),
+              ],
+            ),
+            Text('or Login with Google / Facebook',style: Theme.of(context).textTheme.caption)
           ],
         ),
       ),
